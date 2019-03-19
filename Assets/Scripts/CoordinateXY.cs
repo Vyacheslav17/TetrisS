@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoordinateXY : MonoBehaviour
 {
+
     [SerializeField]
     private int x;
     [SerializeField]
@@ -20,10 +21,11 @@ public class CoordinateXY : MonoBehaviour
 
     public void SetX(int x)
     {
-        this.x = x;
+        this.x = this.x + x;
     }
     public void SetY(int y)
     {
-        this.y = y;
+        this.y = this.y - y;
+
     }
 }

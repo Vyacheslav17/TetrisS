@@ -24,13 +24,13 @@ public class CreateFigure : MonoBehaviour
 
     int StartCoordinateX()
     {
-        int x = Logic.GetComponent<Logic>().GetMassivX(17,2);
+        int x = -347;
         return x;
     }
 
     int StartCoordinateY()
     {
-        int y = Logic.GetComponent<Logic>().GetMassivY(17, 2);
+        int y = 554;
         return y;
     }
 
@@ -51,7 +51,7 @@ public class CreateFigure : MonoBehaviour
             System.Random gen = new System.Random();
             int result = gen.Next(0, 1);
 
-            switch (1)
+            switch (0)
             {
                 case 0:
 
@@ -60,6 +60,8 @@ public class CreateFigure : MonoBehaviour
                     I1.transform.SetParent(Canvas.transform, false);
                     NextFigure_I.SetActive(true);
                     create = false;
+
+                    Debug.Log("Палка");
 
                     break;
                 case 1:
@@ -70,6 +72,8 @@ public class CreateFigure : MonoBehaviour
                     NextFigure_J.SetActive(true);
                     create = false;
 
+                    Debug.Log("Мотыга1");
+
                     break;
                 case 2:
 
@@ -79,6 +83,8 @@ public class CreateFigure : MonoBehaviour
                     NextFigure_L.SetActive(true);
                     create = false;
 
+                    Debug.Log("Мотыга2");
+
                     break;
                 case 3:
                     GameObject O1 = Instantiate(O, new Vector3(StartCoordinateX(), StartCoordinateY(), 0), Quaternion.identity);
@@ -86,6 +92,8 @@ public class CreateFigure : MonoBehaviour
                     O1.transform.SetParent(Canvas.transform, false);
                     NextFigure_O.SetActive(true);
                     create = false;
+
+                    Debug.Log("Квадратный круг");
 
                     break;
                 case 4:
@@ -96,6 +104,8 @@ public class CreateFigure : MonoBehaviour
                     NextFigure_S.SetActive(true);
                     create = false;
 
+                    Debug.Log("Зелёный");
+
                     break;
                 case 5:
 
@@ -105,6 +115,8 @@ public class CreateFigure : MonoBehaviour
                     NextFigure_T.SetActive(true);
                     create = false;
 
+                    Debug.Log("...Так, ничего особенного");
+
                     break;
                 case 6:
 
@@ -113,6 +125,8 @@ public class CreateFigure : MonoBehaviour
                     Z1.transform.SetParent(Canvas.transform, false);
                     NextFigure_Z.SetActive(true);
                     create = false;
+
+                    Debug.Log("Без коментариев");
 
                     break;
 
@@ -124,6 +138,8 @@ public class CreateFigure : MonoBehaviour
                     NextFigure_NewC.SetActive(true);
                     create = false;
 
+                    Debug.Log("Подкова");
+
                     break;
 
                 case 8:
@@ -133,6 +149,8 @@ public class CreateFigure : MonoBehaviour
                     New1.transform.SetParent(Canvas.transform, false);
                     NextFigure_New.SetActive(true);
                     create = false;
+
+                    Debug.Log("На сцене Super Boss");
 
                     break;
             }
