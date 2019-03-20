@@ -424,7 +424,7 @@ MonoBehaviour:
   offset4: {x: 156, y: 0}
   circleCollider2D1: {x: 78, y: 0}
   size: {x: 52, y: 52}
-  radius: 104
+  radius: 1
 --- !u!50 &3894535142338983184
 Rigidbody2D:
   serializedVersion: 4

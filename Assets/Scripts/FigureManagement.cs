@@ -9,7 +9,8 @@ public class FigureManagement : MonoBehaviour
 {
     //Ссылка добавлена в префабе но вылетает исключение
     public Rigidbody2D rb;
-    public CircleCollider2D cc2d;
+    GameObject createFigure;
+    CircleCollider2D cc2d;
 
     bool move = true;
 
@@ -18,7 +19,8 @@ public class FigureManagement : MonoBehaviour
 
     void Start()
     {
-        cc2d = gameObject.GetComponent<CircleCollider2D>();
+        createFigure = GameObject.Find("CreateFigure");
+        cc2d = gameObject.GetComponent<CircleCollider2D>();       
     }
     void Update()
     {
@@ -72,11 +74,18 @@ public class FigureManagement : MonoBehaviour
 
                             if (Input.GetKeyDown(KeyCode.Space))
                             {
-                                cc2d.enabled = true;
+                                cc2d.radius = 104f;
+                               
                                 transform.Rotate(0, 0, -90);
-                                cc2d.enabled = false;
-            }
-                                    
+                                
+                             }
+
+                            else if (Input.GetKeyUp(KeyCode.Space))
+                            {
+                                cc2d.radius = 0.5f;
+                            }
+
+
         }
     }
 
@@ -86,8 +95,9 @@ public class FigureManagement : MonoBehaviour
         {
             if (collision2.gameObject.tag == "border" || collision2.gameObject.tag == "figure")
             {
-
                 move = false;
+                rb.bodyType = RigidbodyType2D.Static;
+                createFigure.GetComponent<CreateFigure>().SetCreate(true);
             }
         }
     }
